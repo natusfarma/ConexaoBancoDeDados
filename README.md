@@ -8,11 +8,10 @@ Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de va
   No projeto foi utilizado Herança , polimorfismo , interface, sobrescrita de construtores 
   classe abstrata , sobre carga de métodos.
   
-## Como utilizar o código
-
+  
 ## arquivo para stringConnection
 
-  properties
+  #### properties
   ``` 
     Data Source=ip,port
     Initial Catalog=bancodedados
@@ -20,15 +19,24 @@ Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de va
     Password=senha
   ```
   
+  ## Outras string de conexão
+  ### postgres
+  "Provider = PostgreSQL OLE DB Provider; Data Source = myServerAddress; location = myDataBase; User ID = myUsername; password = myPassword";
+  ### Mysql
+  "Server=myServerAddress;Database=myDataBase;Uid=myUsername;Pwd=myPassword";
+  ### SqlServer
+  "Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\NORTHWND.MDF;Integrated Security=True; Connect Timeout=30;User Instance=True";
+  
+  **Data Source=ip,port;Initial Catalog=bancodedados;User ID=usuario;Password=senha;";**
+  
+  
+## Como utilizar o código
+
+
+  
     static void Main(string[] args)
         {
-            //    //postgres
-            //    "Provider = PostgreSQL OLE DB Provider; Data Source = myServerAddress; location = myDataBase; User ID = myUsername; password = myPassword";
-            //    //Mysql
-            //    "Server=myServerAddress;Database=myDataBase;Uid=myUsername;Pwd=myPassword";
-            //    //SqlServer
-            //    "Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\dados\\NORTHWND.MDF;Integrated Security=True; Connect Timeout=30;User Instance=True";
-            //    "Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;";
+            
 
             ReadPropertiesFile rfp = new ReadPropertiesFile("properties");
             Console.WriteLine(rfp.BuildString());
