@@ -33,38 +33,36 @@ Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de va
 ## Como utilizar o código
 
 
-  
+  ```c#
     static void Main(string[] args)
-        {
+   {
+
+      ReadPropertiesFile rfp = new ReadPropertiesFile("properties");
+      Console.WriteLine(rfp.BuildString());
+
+      // Caso for usar Mysql 
+      // ConnectionMysql con = new ConnectionMysql(rfp.BuildString());
+      // MysqlCommand command = new MysqlCommand();
             
-
-            ReadPropertiesFile rfp = new ReadPropertiesFile("properties");
-            Console.WriteLine(rfp.BuildString());
-
-            // Caso for usar Mysql 
-            // ConnectionMysql con = new ConnectionMysql(rfp.BuildString());
-            // MysqlCommand command = new MysqlCommand();
+      //caso for usar SqlServer
+      ConnectionSql con = new ConnectionSql(rfp.BuildString());
+      SqlCommand command = new SqlCommand();
             
-            //caso for usar SqlServer
-            ConnectionSql con = new ConnectionSql(rfp.BuildString());
-            SqlCommand command = new SqlCommand();
-            
-            command.Connection = con.DbConnection();
-            command.CommandText = "select * from tabela";
+      command.Connection = con.DbConnection();
+      command.CommandText = "select * from tabela";
 
-            CommandDB cmd = new CommandDB(con, command);
+      CommandDB cmd = new CommandDB(con, command);
 
-            DataTable dt = cmd.DataTable();
+      DataTable dt = cmd.DataTable();
 
-            Console.Write(dt.Rows[0]["Coluna1"] + " - ");
-            Console.Write(dt.Rows[0]["Coluna2"]);
-            Console.WriteLine("");
-            Console.Write(dt.Rows[1]["Coluna1"] + " - ");
-            Console.Write(dt.Rows[1]["Coluna2"]);
+      Console.Write(dt.Rows[0]["Coluna1"] + " - ");
+      Console.Write(dt.Rows[0]["Coluna2"]);
+      Console.WriteLine("");
+      Console.Write(dt.Rows[1]["Coluna1"] + " - ");
+      Console.Write(dt.Rows[1]["Coluna2"]);
 
-            Thread.Sleep(100000);
-        }
-  
+    }
+  ```
   
 ## Autor
   Paulo César
