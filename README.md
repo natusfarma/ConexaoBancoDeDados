@@ -35,10 +35,7 @@ Projeto iniciado para ajudar o Sávio colega de trabalho a realizar conexões de
     {
         private static MySqlConnection dbConnection;
 
-        public ConnectionMysql(string stringConnection) : base(dbConnection)
-        {
-            dbConnection = new MySqlConnection(stringConnection);
-        }
+        public ConnectionMysql(string stringConnection) : base(dbConnection = new MySqlConnection(stringConnection)) { }
 
         public override MySqlConnection DbConnection()
         {
@@ -69,11 +66,10 @@ Projeto iniciado para ajudar o Sávio colega de trabalho a realizar conexões de
 
       DataTable dt = cmd.DataTable();
 
-      Console.Write(dt.Rows[0]["Coluna1"] + " - ");
-      Console.Write(dt.Rows[0]["Coluna2"]);
-      Console.WriteLine("");
-      Console.Write(dt.Rows[1]["Coluna1"] + " - ");
-      Console.Write(dt.Rows[1]["Coluna2"]);
+      for (int i = 0; i < dt.Rows.Count; i++)
+      {
+          Console.WriteLine("coluna1 {0} , coluna2... {1}", dt.Rows[i]["coluna1"], dt.Rows[i]["coluna2"]);
+      }
 
     }
   ```
