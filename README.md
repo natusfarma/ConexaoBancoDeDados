@@ -56,7 +56,7 @@ Projeto iniciado para ajudar o Sávio colega de trabalho a realizar conexões de
 
       // Caso for usar Mysql 
       // ConnectionMysql con = new ConnectionMysql(rfp.BuildString());
-      // MysqlCommand command = new MysqlCommand();
+      // MySqlCommand command = new MySqlCommand();
             
       //caso for usar SqlServer
       ConnectionSql con = new ConnectionSql(rfp.BuildString());
