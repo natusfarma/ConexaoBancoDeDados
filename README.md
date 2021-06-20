@@ -1,6 +1,6 @@
 # ConexaoBancoDeDados
 
-Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de varios banco de dados só alterado a injeção de dados.
+Projeto iniciado para ajudar o Sávio colega de trabalho a realizar conexões de vários bancos de dados só criar uma classe herdando da classe ConnectionDB<T> passando o tipo da classe do banco e também realizar a leitura de um arquivo estruturado com chave e valor.
 
 ## C#
   Foi um projeto para aprender a todos os recursos de orientação a objeto.
