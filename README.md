@@ -77,6 +77,51 @@ Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de va
 
     }
   ```
+  ## Arquivo properties
+  ```file
+    [database]
+    #isso é um comentário... linha em branco é ignorado
+    Data Source=ip,port
+    Initial Catalog=bancodedados
+    User ID=usuario
+    Password=senha
+    
+    [atualizacao]
+    Endereco=http://dominium.algumlugar\atualizador
+    
+    [outros parametros]
+    nome=joaquim
+    Loja Default=100
+    
+  ```
+  
+  ## Como utilizar o código ReadListPropertiesFile
+  ```c#
+      public static void Main(String[] args)
+      {
+
+            ReadListPropertiesFile file = null;
+            try
+            {
+                file = new ReadListPropertiesFile("properties");
+                /// valor Padrão BuildString("[database]")
+                Console.WriteLine(file.BuildString());
+                Console.WriteLine("------------");
+                foreach (var item in file.Properties["[database]"])
+                {
+                    Console.WriteLine("chave {0} e valor {1}",item.Key , item.Value);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
+            Console.ReadKey();
+        }
+
+    }
+  ```
   
 ## Autor
   Paulo César
