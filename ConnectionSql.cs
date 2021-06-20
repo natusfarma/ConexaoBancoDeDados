@@ -6,10 +6,7 @@ namespace Connection.DataBase
     {
         private static SqlConnection dbConnection;
 
-        public ConnectionSql(string stringConnection) : base(dbConnection)
-        {
-            dbConnection = new SqlConnection(stringConnection);
-        }
+        public ConnectionSql(string stringConnection) : base(dbConnection = new SqlConnection(stringConnection)) { }
 
         public override SqlConnection DbConnection()
         {
