@@ -28,9 +28,6 @@ Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de va
   "Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\NORTHWND.MDF;Integrated Security=True; Connect Timeout=30;User Instance=True";
   
   **Data Source=ip,port;Initial Catalog=bancodedados;User ID=usuario;Password=senha;";**
-  
-  
-## Como utilizar o código
 
 ## Conexão com o banco de dados Mysql criação da classe 
 ```c#
@@ -49,7 +46,7 @@ Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de va
         }
     }
 ```
-
+## Como utilizar o código
   ```c#
     static void Main(string[] args)
    {
