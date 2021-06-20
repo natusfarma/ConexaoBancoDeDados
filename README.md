@@ -32,6 +32,23 @@ Projeto iniciado para ajudar o meu colega de trabalho a realizar conexões de va
   
 ## Como utilizar o código
 
+## Conexão com o banco de dados Mysql criação da classe 
+```c#
+  public class ConnectionMysql : ConnectionDB<MySqlConnection>
+    {
+        private static MySqlConnection dbConnection;
+
+        public ConnectionMysql(string stringConnection) : base(dbConnection)
+        {
+            dbConnection = new MySqlConnection(stringConnection);
+        }
+
+        public override MySqlConnection DbConnection()
+        {
+            return dbConnection;
+        }
+    }
+```
 
   ```c#
     static void Main(string[] args)
