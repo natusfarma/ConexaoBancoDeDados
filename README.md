@@ -23,7 +23,7 @@ Projeto iniciado para ajudar o Sávio colega de trabalho a realizar conexões de
   ### postgres
   "Provider = PostgreSQL OLE DB Provider; Data Source = myServerAddress; location = myDataBase; User ID = myUsername; password = myPassword";
   ### Mysql
-  "Server=myServerAddress;Database=myDataBase;Uid=myUsername;Pwd=myPassword";
+  "Server=myServerAddress;Database=myDataBase;Uid=myUsername;port=3306;Pwd=myPassword";
   ### SqlServer
   "Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\NORTHWND.MDF;Integrated Security=True; Connect Timeout=30;User Instance=True";
   
